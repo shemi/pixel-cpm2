@@ -1,0 +1,9 @@
+body.preauth{
+  background-color: #333333;
+  .main-form{
+    background-color: #fff;
+    max-width: em(560);
+    padding: $base-spacing;
+    margin: 0 auto;
+  }
+}

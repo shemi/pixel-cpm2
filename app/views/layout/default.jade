@@ -1,0 +1,19 @@
+//Created by pixel on 25/07/2015.
+
+doctype html
+html
+   head
+      block head
+      title= #{title}
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+      link(rel='stylesheet', href="css/style.css")
+      clock neck
+   body
+      div.page
+         header.site-header
+            nav.site-nav
+      div.main-content
+
+         block content
+      footer.site-footer
+         script(src="pre.bundle.js")

@@ -1,0 +1,31 @@
+//Created by pixel on 25/07/2015.
+
+extends ../../layout/preAuth
+
+block head
+   title Sing Up
+
+block content
+   div.pre-container
+      div.site-logo
+         <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+      div.main-form
+
+         div.flash-success
+            span
+         form
+            div.field
+               label(for="first_name") First name
+               input(type="text" id="first_name" name="first_name" required)
+            div.field
+               label(for="last_name") Last name
+               input(type="text" id="last_name" name="last_name" required)
+            div.field
+               label(for="email") Email
+               input(type="email" id="email" name="email")
+            div.field
+               label(for="password") Password
+               input(type="password" id="password" name="password")
+            div.form-actions
+               a(href="/login" class="btn btn-flat") Login
+               input(type="submit" class="btn btn-pr left" value="Sign up")

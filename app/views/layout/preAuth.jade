@@ -1,0 +1,24 @@
+//Created by pixel on 25/07/2015.
+
+//Created by pixel on 25/07/2015.
+doctype html
+html
+   head
+      block head
+      title #{title}
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+      link(rel='stylesheet', href="css/style.css")
+      block neck
+   body(class="preauth")
+      div.page
+         header.site-header
+            block siteHeader
+            block siteNav
+         div.main-content
+            div.contaiter
+               block content
+         footer.site-footer
+            block siteFooter
+      script(src="common.js")
+      script(src="pre.bundle.js")
+      block feet
