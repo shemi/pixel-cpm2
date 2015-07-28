@@ -1,0 +1,27 @@
+body.preauth{
+  background-color: #333333;
+  .site-logo{
+    margin: 50px 0;
+    text-align: center;
+  }
+  .main-form{
+    background-color: #fff;
+    border-radius: $base-border-radius;
+    max-width: em(560);
+    margin: 0 auto;
+    .form-body{
+      padding: $base-spacing;
+    }
+    .form-actions{
+      @include clearfix;
+      border-top: 1px solid #c4c4c4;
+      padding: $base-spacing;
+      .left{
+        float: right;
+      }
+      a{
+        vertical-align: middle;
+      }
+    }
+  }
+}

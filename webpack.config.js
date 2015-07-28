@@ -28,15 +28,15 @@ module.exports = {
     devtool: 'source-map-inline',
     module:{
         loaders:[
-            //{
-            //    test: /\.scss$/,
-            //    loader: ExtractTextPlugin.extract(
-            //        'style-loader',
-            //        'css-loader?sourceMap!' +
-            //        'sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
-            //    )
-            //},
-            //{test: /\.css/, loader: 'css-loader!autoprefixer-loader'},
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract(
+                    'style-loader',
+                    'css-loader?sourceMap!' +
+                    'sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
+                )
+            },
+            {test: /\.css/, loader: 'css-loader!autoprefixer-loader'},
             {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'},
             {test: /\.html$/, loader: 'raw'},
             {test: /\.json$/, loader: 'raw'}
