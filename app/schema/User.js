@@ -15,7 +15,7 @@ module.exports = function(app, mongoose){
         },
         isActive: String,
         timeCreated: {type: Date, default: Date.now},
-        rememberIdentifier: String,
+        rememberIdentifier: { type: String, unique: true },
         rememberToken: String,
         resetPasswordToken: String,
         resetPasswordExpires: Date,
@@ -52,6 +52,7 @@ module.exports = function(app, mongoose){
     userSchema.index({ username: 1 }, {unique: true});
     userSchema.index({ email: 1 }, {unique: true});
     userSchema.index({ search: 1 });
+    userSchema.index({ rememberIdentifier: 1 }, {unique: true});
     userSchema.set('autoIndex', (app.get('env') === 'development'));
     app,db.model('User', userSchema);
 };

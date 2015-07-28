@@ -36,6 +36,7 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+
 app.use(require('morgan')('dev'));
 app.use(require('compression')());
 //app.use(require('serve-static')(path.join(__dirname, '../public')));
@@ -62,12 +63,8 @@ app.use(function (req, res, next) {
 });
 helmet(app);
 
-// catch 404 and forward to error handler
-//app.use(function(req, res, next) {
-//    var err = new Error('Not Found');
-//    err.status = 404;
-//    next(err);
-//});
+//config i18n
+var i18n = require('./lang')(app);
 
 //response locals
 app.use(function(req, res, next) {
@@ -75,6 +72,7 @@ app.use(function(req, res, next) {
     res.locals.user = {};
     res.locals.user.defaultReturnUrl = req.user && req.user.defaultReturnUrl();
     res.locals.user.username = req.user && req.user.username;
+    res.locals.user.lang = req.user && req.user.lang;
     next();
 });
 
@@ -82,6 +80,7 @@ app.use(function(req, res, next) {
 app.locals.projectName = app.config.projectName;
 app.locals.copyrightYear = new Date().getFullYear();
 app.locals.copyrightName = app.config.companyName;
+app.locals.projectLogo = app.config.projectLogo;
 app.locals.cacheBreaker = 'br34k-01';
 
 require('./passport');
@@ -93,5 +92,6 @@ app.utility.sendmail = require('./util/sendmail');
 app.utility.slugify = require('./util/slugify');
 app.utility.workflow = require('./util/workflow');
 app.utility.validator = require('validator');
+
 
 module.exports = app;

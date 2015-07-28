@@ -1,0 +1,24 @@
+//Created by pixel on 25/07/2015.
+extends ../../layout/preAuth
+
+block head
+    title log in
+block content
+    div.pre-container
+        div.site-logo
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_4.png" alt="Logo image">
+        div.main-form
+            div.flash-success
+                span
+            form(action="/" method="post" autocomplete="off")
+                div.form-body
+                    div.field
+                        label(for="email")=__('Email')
+                        input(type="email" id="email" name="email")
+                    div.field
+                        label(for="password")=__('Password')
+                        input(type="password" id="password" name="password")
+                        a.forgot(href="/account-recovery")=__('Forgot your password?')
+                div.form-actions
+                    a(href="/signup" class="btn btn-flat")=__('Signup')
+                    input(type="submit" class="btn btn-pr left" value=__('Login'))

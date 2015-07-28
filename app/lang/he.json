@@ -1,0 +1,17 @@
+{
+	"Email": "דוא\"ל",
+	"Password": "סיסמה",
+	"Forgot your password?": "שכחתה את הסיסמה?",
+	"Signup": "הרשמה",
+	"Login": "התחבר",
+	"First name": "שם פרטי",
+	"Last name": "שם משפחה",
+	"Sign up": "הירשם",
+	"Pixel-cpm": "Pixel-cpm",
+	"Hi, %s": "Hi, %s",
+	"Thanks for signing up with %s You must follow this link to activate your account:": "Thanks for signing up with %s You must follow this link to activate your account:",
+	"Have fun, and don't hesitate to contact us with your feedback.": "Have fun, and don't hesitate to contact us with your feedback.",
+	"If clicking the link doesn't work, please copy and paste it into your browser.": "If clicking the link doesn't work, please copy and paste it into your browser.",
+	"If you didn't sign up for a %s, please reply to this e-mail so we can remove your e-mail address from our system.": "If you didn't sign up for a %s, please reply to this e-mail so we can remove your e-mail address from our system.",
+	"Connect With Us:": "Connect With Us:"
+}

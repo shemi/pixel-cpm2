@@ -13,10 +13,14 @@ router.get('/*', function(req, res, next){
     next();
 });
 
+//preAuth
+router = require('./preAuth')(router, helpers);
 
-router.all(/^(?!\/api).*$/, helpers.ensureAuthenticated);
-router.all(/^(?!\/api).*$/, function(req, res, next){
-    res.render('preAuth/register/index');
+router.get('/emailtest', function(req, res, next){
+    res.render('emailtest/register');
 });
+
+router.all(/^(?!\/(api|signup|login|account-recovery|emailtest)).*$/, helpers.ensureAuthenticated);
+router.all(/^(?!\/(api|signup|login|account-recovery|emailtest)).*$/, helpers.useAngular);
 
 module.exports = router;

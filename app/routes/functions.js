@@ -15,6 +15,7 @@ module.exports = {
         }
         res.set('X-Auth-Required', 'true');
         req.session.returnUrl = req.originalUrl;
+        res.redirect('/login');
         return next(false);
     }
 

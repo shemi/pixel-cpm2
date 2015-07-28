@@ -13,19 +13,24 @@ block content
 
          div.flash-success
             span
-         form
-            div.field
-               label(for="first_name") First name
-               input(type="text" id="first_name" name="first_name" required)
-            div.field
-               label(for="last_name") Last name
-               input(type="text" id="last_name" name="last_name" required)
-            div.field
-               label(for="email") Email
-               input(type="email" id="email" name="email")
-            div.field
-               label(for="password") Password
-               input(type="password" id="password" name="password")
+         form(action="/" method="post" autocomplete="off")
+            div.form-body
+               div.field
+                  label(for="first_name")=__('First name')
+                  input(type="text" id="first_name" name="first_name" required)
+               div.field
+                  label(for="last_name")=__('Last name')
+                  input(type="text" id="last_name" name="last_name" required)
+               div.field
+                  label(for="email")=__('Email')
+                  input(type="email" id="email" name="email")
+               div.field
+                  label(for="password")=__('Password')
+                  input(type="password" id="password" name="password")
             div.form-actions
-               a(href="/login" class="btn btn-flat") Login
-               input(type="submit" class="btn btn-pr left" value="Sign up")
+               a(href="/login" class="btn btn-flat")=__('Login')
+               input(type="submit" class="btn btn-pr left" value=__('Sign up'))
+         div
+            !{__(projectName)}
+
+
