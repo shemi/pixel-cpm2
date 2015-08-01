@@ -49,7 +49,10 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+node_modules2
 
+### vagrant ###
+vagrant
 
 ### Bower ###
 bower_components
@@ -110,3 +113,8 @@ crashlytics-build.properties
 ### Sass ###
 .sass-cache
 *.css.map
+
+
+emails_template_factory
+
+config.js

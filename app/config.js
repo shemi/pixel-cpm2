@@ -17,7 +17,7 @@ module.exports = {
         defaultLocale: 'en',
         cookieName: 'locale',
         extension: ".json",
-        directory: path.join(__dirname, '/app/lang')
+        directory: path.join(__dirname, '/logic/lang')
     },
     mongodb: {
         uri: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost:27017/CPM'

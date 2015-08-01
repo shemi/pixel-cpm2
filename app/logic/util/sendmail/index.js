@@ -1,54 +1,63 @@
 'use strict';
 
-exports = module.exports = function(req, res, options) {
-  /* options = {
-    from: String,
-    to: String,
-    cc: String,
-    bcc: String,
-    text: String,
-    textPath String,
-    html: String,
-    htmlPath: String,
-    attachments: [String],
-    success: Function,
-    error: Function
-  } */
+module.exports = function(req, res, options) {
 
-  var renderText = function(callback) {
-    res.render(options.textPath, options.locals, function(err, text) {
-      if (err) {
-        callback(err, null);
-      }
-      else {
-        options.text = text;
-        return callback(null, 'done');
-      }
-    });
-  };
+    /* options = {
+     from: String,
+     to: String,
+     cc: String,
+     bcc: String,
+     text: String,
+     textPath String,
+     html: String,
+     htmlPath: String,
+     attachments: [String],
+     success: Function,
+     error: Function
+     } */
 
-  var renderHtml = function(callback) {
-    res.render(options.htmlPath, options.locals, function(err, html) {
-      if (err) {
-        callback(err, null);
-      }
-      else {
-        options.html = html;
-        return callback(null, 'done');
-      }
-    });
-  };
+    var Q = require('q');
+    var fs = require('fs');
+    var jade = require('jade');
+    var juice = require('juice');
 
-  var renderers = [];
-  if (options.textPath) {
+
+
+    var renderText = function(callback) {
+        var defer = Q.defer();
+        res.render(options.textPath, options.locals, function(err, text) {
+            if (err) {
+                defer.reject(err);
+            }
+            else {
+                options.text = text;
+                return callback(null, 'done');
+            }
+        });
+    };
+
+    var renderHtml = function(callback) {
+        var defer = Q.defer();
+        res.render(options.htmlPath, options.locals, function(err, html) {
+            if (err) {
+                defer.reject(err);
+            }  else {
+                options.html = html;
+                return callback(null, 'done');
+            }
+        });
+    };
+
+    var renderers = [];
+    if (options.textPath) {
     renderers.push(renderText);
-  }
+    }
 
-  if (options.htmlPath) {
+    if (options.htmlPath) {
     renderers.push(renderHtml);
-  }
+    }
 
-  require('async').parallel(
+    require('async').parallel(
     renderers,
     function(err, results){
       if (err) {
@@ -90,5 +99,5 @@ exports = module.exports = function(req, res, options) {
         }
       });
     }
-  );
+    );
 };
