@@ -6,5 +6,9 @@
 	"Login": "Login",
 	"First name": "First name",
 	"Last name": "Last name",
-	"Sign up": "Sign up"
+	"Sign up": "Sign up",
+	"Pixel-cpm": "Pixel-cpm",
+	"Connect With Us:": "Connect With Us:",
+	"If you received this email by mistake, simply delete it. You won't be subscribed if you don't click the confirmation link above.": "If you received this email by mistake, simply delete it. You won't be subscribed if you don't click the confirmation link above.",
+	"This Email sent from: %s": "This Email sent from: %s"
 }

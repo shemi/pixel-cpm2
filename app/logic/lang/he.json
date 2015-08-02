@@ -13,5 +13,7 @@
 	"Have fun, and don't hesitate to contact us with your feedback.": "Have fun, and don't hesitate to contact us with your feedback.",
 	"If clicking the link doesn't work, please copy and paste it into your browser.": "If clicking the link doesn't work, please copy and paste it into your browser.",
 	"If you didn't sign up for a %s, please reply to this e-mail so we can remove your e-mail address from our system.": "If you didn't sign up for a %s, please reply to this e-mail so we can remove your e-mail address from our system.",
-	"Connect With Us:": "Connect With Us:"
+	"Connect With Us:": "Connect With Us:",
+	"If you received this email by mistake, simply delete it. You won't be subscribed if you don't click the confirmation link above.": "If you received this email by mistake, simply delete it. You won't be subscribed if you don't click the confirmation link above.",
+	"This Email sent from: %s": "This Email sent from: %s"
 }

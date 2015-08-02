@@ -36,5 +36,10 @@ module.exports = {
         credentials: {
             apiKey: 'MUJHCWjVSNuSG66bR7L6ew'
         }
-    }
+    },
+    socialLinks: [
+        {name: 'Facebook', class: 'facebook', link: '#'},
+        {name: 'Twitter', class: 'twitter', link: '#'},
+        {name: 'Google +', class: 'google-plus', link: '#'}
+    ]
 }

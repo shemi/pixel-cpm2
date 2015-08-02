@@ -1,34 +1,13 @@
 
-td.wrapper
-   table.six.columns
-      tr
-         td.left-text-pad
-            h5 Connect With Us:
-            table.tiny-button.facebook
-               tr
-                  td
-                     a(href='#') Facebook
-            br
-            table.tiny-button.twitter
-               tr
-                  td
-                     a(href='#') Twitter
-            br
-            table.tiny-button.google-plus
-               tr
-                  td
-                     a(href='#') Google +
-         td.expander
-
-
 td.wrapper.last
-   table.six.columns
+   table.twelve.columns
       tr
-         td.last.right-text-pad
-            h5 Contact Info:
-            p Phone: 408.341.0600
-            p
-               | Email:
-               a(href='/cdn-cgi/l/email-protection#a2cad1c7cec6cdcce2d6d0c3ccd6cdd08cc1cdcf')
-                  span.__cf_email__(data-cfemail='c1a9b2a4ada5aeaf81b5b3a0afb5aeb3efa2aeac') [email&nbsp;protected]
-         td.expander
+       td.expander
+          td.left-text-pad
+           if socialLinks
+              h5=socialLinksTitle
+              each link, index in socialLinks
+                table(class="tiny-button #{link.class}")
+                    tr: td: a(href=link.link)=link.name
+                if socialLinks.length !== index + 1
+                    br

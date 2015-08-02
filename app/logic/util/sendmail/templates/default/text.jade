@@ -1,0 +1,18 @@
+//- Created by shemi on 2/8/15.
+
+
+| #{content.title}
+| \r\n\r\n
+if content.lead
+    | #{content.lead}
+    | \r\n
+
+each p in content.paragraphs
+    | #{p} \n
+
+if content.cta
+    | #{content.cta.title} #{content.cta.url}
+    | \n
+    | \n
+
+| #{i18n.__('This Email sent from: %s', appName)}

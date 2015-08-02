@@ -34,34 +34,37 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                                         tr
                                             td.wrapper.last
                                                 block content
-    //
-    //
-    //                                //- callout table
-    //                                if callout
-    //                                    table.row.callout
-    //                                        tr
-    //                                            td.wrapper.last
-    //                                                table.twelve.columns
-    //                                                    tr
-    //                                                        td.panel
-    //                                                            p!=callout
-    //                                                        td.expander
-    //
-    //
-    //                                table.row.footer
-    //                                    tr
-    //                                        block footer
-    //
-    //
-    //                                //- default links table
-    //                                table.row
-    //                                    tr
-    //                                        td.wrapper.last
-    //                                            table.twelve.columns
-    //                                                tr
-    //                                                    td(align='center')
-    //                                                        center
-    //                                                            p(style='text-align:center;')
-    //                                                                each link in defoults.links
-    //                                                                    a(href=link.href)= link.title
-    //                                                    td.expander
+
+
+                                    //- callout table
+                                    if callout
+                                        table.row.callout
+                                            tr
+                                                td.wrapper.last
+                                                    table.twelve.columns
+                                                        tr
+                                                            td.panel
+                                                                p!=callout
+                                                            td.expander
+
+
+                                    table.row.footer
+                                        tr
+                                            block footer
+
+
+                                    //- default links table
+                                    table.row
+                                        tr
+                                            td.wrapper.last
+                                                table.twelve.columns
+                                                    tr
+                                                        td(align='center')
+                                                            center
+                                                                p(style='text-align:center;')
+                                                                    if typeof(links) !== 'undefined'
+                                                                        each link, index in links
+                                                                            a(href=link.href)= link.title
+                                                                            if links.length !== index + 1
+                                                                                span=" | "
+                                                        td.expander
