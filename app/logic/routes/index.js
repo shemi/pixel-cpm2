@@ -20,7 +20,7 @@ router.get('/emailtest', function(req, res, next){
     res.render('emailtest/register');
 });
 
-router.all(/^(?!\/(api|signup|login|account-recovery|emailtest)).*$/, helpers.ensureAuthenticated);
-router.all(/^(?!\/(api|signup|login|account-recovery|emailtest)).*$/, helpers.useAngular);
+router.all(/^(?!\/(api|signup|login|account-recovery|test)).*$/, helpers.ensureAuthenticated);
+router.all(/^(?!\/(api|signup|login|account-recovery|test)).*$/, helpers.useAngular);
 
 module.exports = router;

@@ -1,0 +1,19 @@
+//- Created by shemi on 2 Aug 15.
+
+
+if content
+    table.twelve.columns
+       tbody
+          tr
+             td
+
+                h1=content.title
+
+                if content.lead
+                   p.lead=content.lead
+
+                if content.paragraphs
+                    each paragraph in content.paragraphs
+                        p!=paragraph
+
+             td.expander

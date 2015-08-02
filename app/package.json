@@ -41,6 +41,7 @@
     "passport": "^0.2.2",
     "passport-local": "^1.0.0",
     "q": "^1.4.1",
+    "sendgrid": "^1.9.2",
     "serve-favicon": "~2.2.1",
     "serve-static": "^1.10.0",
     "validator": "^3.41.2"

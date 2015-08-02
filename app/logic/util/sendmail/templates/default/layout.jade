@@ -1,0 +1,67 @@
+
+doctype strict
+
+html(xmlns='http://www.w3.org/1999/xhtml')
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        meta(name='viewport', content='width=device-width')
+        style
+            include ../default.css
+        style
+            include ./style.css
+    body
+        //- body table
+        table.body
+            tbody
+                tr
+                    td.center(align='center', valign='top')
+                        center
+
+                        //- header table
+                        table.row.header
+                            tr
+                                td.center(align='center')
+                                    center
+                                        block header
+
+                        //- page table
+                        table.container.page
+                            tr
+                                td
+
+                                    //- content table
+                                    table.row
+                                        tr
+                                            td.wrapper.last
+                                                block content
+    //
+    //
+    //                                //- callout table
+    //                                if callout
+    //                                    table.row.callout
+    //                                        tr
+    //                                            td.wrapper.last
+    //                                                table.twelve.columns
+    //                                                    tr
+    //                                                        td.panel
+    //                                                            p!=callout
+    //                                                        td.expander
+    //
+    //
+    //                                table.row.footer
+    //                                    tr
+    //                                        block footer
+    //
+    //
+    //                                //- default links table
+    //                                table.row
+    //                                    tr
+    //                                        td.wrapper.last
+    //                                            table.twelve.columns
+    //                                                tr
+    //                                                    td(align='center')
+    //                                                        center
+    //                                                            p(style='text-align:center;')
+    //                                                                each link in defoults.links
+    //                                                                    a(href=link.href)= link.title
+    //                                                    td.expander

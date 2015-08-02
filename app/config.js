@@ -28,16 +28,13 @@ module.exports = {
         logExpiration: '25m'
     },
     requireAccountVerification: false,
-    smtp: {
+    email: {
         from: {
             name: process.env.SMTP_FROM_NAME || this.projectName,
             address: process.env.SMTP_FROM_ADDRESS || this.systemEmail
         },
         credentials: {
-            user: process.env.SMTP_USERNAME || 'shemi.perez@gmail.com',
-            password: process.env.SMTP_PASSWORD || 'vbgrfaedxkdxxupw',
-            host: process.env.SMTP_HOST || 'smtp.gmail.com',
-            ssl: true
+            apiKey: 'MUJHCWjVSNuSG66bR7L6ew'
         }
     }
 }

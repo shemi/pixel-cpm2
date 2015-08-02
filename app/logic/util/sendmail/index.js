@@ -16,10 +16,11 @@ module.exports = function(req, res, options) {
      error: Function
      } */
 
+    var sendgrid = require('sendgrid')(req.app.config.email.credentials.apiKey);
     var Q = require('q');
     var fs = require('fs');
-    var jade = require('jade');
-    var juice = require('juice');
+
+
 
 
 
@@ -50,34 +51,33 @@ module.exports = function(req, res, options) {
 
     var renderers = [];
     if (options.textPath) {
-    renderers.push(renderText);
+        renderers.push(renderText);
     }
 
     if (options.htmlPath) {
-    renderers.push(renderHtml);
+        renderers.push(renderHtml);
     }
 
     require('async').parallel(
     renderers,
     function(err, results){
-      if (err) {
-        options.error('Email template render failed. '+ err);
-        return;
+        if (err) {
+          options.error('Email template render failed. '+ err);
+          return;
       }
+
 
       var attachments = [];
-
-      if (options.html) {
-        attachments.push({ data: options.html, alternative: true });
+        if (options.html) {
+          attachments.push({ data: options.html, alternative: true });
       }
 
-      if (options.attachments) {
-        for (var i = 0 ; i < options.attachments.length ; i++) {
-          attachments.push(options.attachments[i]);
+        if (options.attachments) {
+          for (var i = 0 ; i < options.attachments.length ; i++) {
+            attachments.push(options.attachments[i]);
         }
       }
 
-      var emailjs = require('emailjs/email');
       var emailer = emailjs.server.connect( req.app.config.smtp.credentials );
       emailer.send({
         from: options.from,

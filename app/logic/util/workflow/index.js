@@ -3,7 +3,7 @@
  */
 'use strict';
 
-exports = module.exports = function(req, res) {
+module.exports = function(req, res) {
     var workflow = new (require('events').EventEmitter)();
 
     workflow.outcome = {
